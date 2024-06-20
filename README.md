@@ -19,3 +19,38 @@ Briefly describe your project and its purpose. Mention key technologies used and
 ![compose1](https://github.com/Tonistark92/Adaptive_ComposeUtil/assets/86676102/0e545ca6-223a-439a-ad67-01606a671350)
 
 ![compose2](https://github.com/Tonistark92/Adaptive_ComposeUtil/assets/86676102/f6806dab-58c1-48ed-bea2-0ffd76e81ca2)
+```kotlin
+    @Composable
+    fun ProfileVerticalHorizantal(
+        // the data
+//        user: User
+    ) {
+
+        BoxWithConstraints(modifier = Modifier.padding(16.dp)) {
+            when (this.maxWidth) {
+                in (0.dp..400.dp) -> {
+//                    VerticalProfile(user)
+                }
+                in (401.dp..900.dp) -> {
+//                    HorizontalProfile(user)
+                }
+            }
+        }
+    }
+    @Composable
+    fun ProfileCompatExpanded(
+//        user: User
+    ) {
+        BoxWithConstraints(modifier = Modifier.padding(16.dp)) {
+            when (this.maxWidth) {
+                in (0.dp..600.dp) -> {
+//                    CompactProfile(user)
+                }
+                in (601.dp..900.dp) -> {
+//                    ExpandedProfile(user)
+                }
+            }
+        }
+    }
+```
+[Read to understand sizes modifiers](https://stackoverflow.com/questions/73250986/different-types-of-width-in-jetpack-compose/73258726#73258726)
