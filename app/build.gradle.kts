@@ -6,18 +6,20 @@ plugins {
 android {
     namespace = "com.iscoding.test"
     compileSdk = 34
-
     defaultConfig {
         applicationId = "com.iscoding.test"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+//        resourceConfigurations += listOf("en", "de", "ar")
+        resConfigs("en", "ar","de")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
+        resourceConfigurations.plus(listOf("ar", "de", "en"))
     }
 
     buildTypes {
@@ -73,4 +75,6 @@ dependencies {
     implementation("com.github.Kaaveh:sdp-compose:1.1.0")
     implementation( "androidx.compose.material3:material3-window-size-class:1.2.1")
     implementation( "androidx.window:window:1.3.0")
+    implementation( "androidx.appcompat:appcompat:1.7.0")
+//    implementation( "com.akexorcist:localization:1.2.11")
 }

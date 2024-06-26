@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">تيست</string>
+    <string name="hello">اهلا</string>
+    <string name="translate">ترجم</string>
+</resources>

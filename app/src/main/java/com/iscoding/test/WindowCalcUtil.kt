@@ -1,17 +1,14 @@
 package com.iscoding.test
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SheetValue
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.windowsizeclass.WindowSizeClass
+import android.app.LocaleConfig
+import android.content.res.Configuration
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
+import java.util.Locale
 
 @Composable
 fun rememberWindowInfo(): WindowInfo {
@@ -43,3 +40,7 @@ data class WindowInfo(
         object Expanded: WindowType()
     }
 }
+
+val LocalAppLocale = compositionLocalOf { Locale.getDefault() }
+val LocalLayoutDirection = compositionLocalOf { LayoutDirection.Ltr }
+val LocaleConfig= compositionLocalOf<Configuration> { error("No Config provided") }
